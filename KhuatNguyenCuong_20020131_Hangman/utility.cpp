@@ -10,6 +10,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 string normalize(const string& s)
@@ -19,7 +20,7 @@ string normalize(const string& s)
     return news;
 }
 
-string chooseWord(const string& fileName)
+string chooseWord(const string &fileName)
 {
     vector<string> vocabulary;
     ifstream file(fileName);
@@ -28,7 +29,7 @@ string chooseWord(const string& fileName)
 
     while (!file.eof()) {
         string line;
-        getline(file, line);
+        file >> line;
         if (file && !line.empty())
             vocabulary.push_back(normalize(line));
     }
