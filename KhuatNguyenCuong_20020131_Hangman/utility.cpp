@@ -32,10 +32,12 @@ string chooseWord(const string& fileName)
         if (file && !line.empty())
             vocabulary.push_back(normalize(line));
     }
-
+    srand(static_cast<unsigned int>(time(nullptr))); //random seeds
     unsigned long int n = vocabulary.size();
     cout << "vocabulary size = " << n << endl;
-    return n > 0 ? vocabulary[rand() % n] : "";
+    string word  = vocabulary[rand() % n];
+    cout << word.length() << endl;
+    return n > 0 ? word : "";
 }
 
 bool contains(string word, char guess)

@@ -10,6 +10,7 @@
 		A352622926249B98004B94EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352622826249B98004B94EE /* main.cpp */; };
 		A352623226249C32004B94EE /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623026249C32004B94EE /* utility.cpp */; };
 		A352623626249CC6004B94EE /* draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623426249CC6004B94EE /* draw.cpp */; };
+		A352623C2624A847004B94EE /* core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623A2624A847004B94EE /* core.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +32,9 @@
 		A352623126249C32004B94EE /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 		A352623426249CC6004B94EE /* draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = draw.cpp; sourceTree = "<group>"; };
 		A352623526249CC6004B94EE /* draw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = draw.hpp; sourceTree = "<group>"; };
-		A352623826249ED6004B94EE /* ogden_picturable_200.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ogden_picturable_200.txt; sourceTree = "<group>"; };
+		A352623A2624A847004B94EE /* core.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
+		A352623B2624A847004B94EE /* core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
+		A3FCB627262757FA0092251E /* ogden_picturable_200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ogden_picturable_200.txt; path = ../../../Downloads/ogden_picturable_200.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				A352622826249B98004B94EE /* main.cpp */,
-				A352623826249ED6004B94EE /* ogden_picturable_200.txt */,
 				A352623426249CC6004B94EE /* draw.cpp */,
 				A352623526249CC6004B94EE /* draw.hpp */,
+				A3FCB627262757FA0092251E /* ogden_picturable_200.txt */,
 				A352623026249C32004B94EE /* utility.cpp */,
 				A352623126249C32004B94EE /* utility.hpp */,
+				A352623A2624A847004B94EE /* core.cpp */,
+				A352623B2624A847004B94EE /* core.hpp */,
 			);
 			path = KhuatNguyenCuong_20020131_Hangman;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			files = (
 				A352623226249C32004B94EE /* utility.cpp in Sources */,
 				A352622926249B98004B94EE /* main.cpp in Sources */,
+				A352623C2624A847004B94EE /* core.cpp in Sources */,
 				A352623626249CC6004B94EE /* draw.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

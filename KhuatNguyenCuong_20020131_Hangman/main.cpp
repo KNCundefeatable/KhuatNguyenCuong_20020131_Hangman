@@ -39,7 +39,7 @@ void update(string& guessedWord, const string& word, char guess)
 int main(int argc, char* argv[])
 {
     srand(static_cast<unsigned int>(time(nullptr))); //random seeds
-    string fileName = argc > 1 ? argv[1] : "/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/ogden_picturable_200.txt";
+    string fileName = argc > 1 ? argv[1] : "/Users/knc/Downloads/ogden_picturable_200.txt";
 
     while (true) {
         string word = chooseWord(fileName);
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
             cout << "No word available in " << fileName << endl;
             return 0;
         }
-        string guessedWord = string(word.length()-1, '-');
+        string guessedWord = string(word.length(), '-');
         int badGuessCount = 0;
         const int MAX_BAD_GUESS = 7;
         string badGuess;
