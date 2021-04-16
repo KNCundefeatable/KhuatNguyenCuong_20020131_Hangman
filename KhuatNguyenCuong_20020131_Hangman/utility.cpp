@@ -5,11 +5,13 @@
 //  Created by Khuất Nguyên Cương on 4/12/21.
 //
 
-#include "utility.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
+
+#include "utility.hpp"
 
 using namespace std;
 
