@@ -37,16 +37,15 @@ private:
 public:
     bool Playing;
     core();
-    void initWord();
-    void readAGuess();
-    void updateGuessedWord();
-    void updateBadGuess();
-    void gameContinue ();
-    
-    void clearScreen();
-    void renderGame();
-    bool checkWinYet();
-    void printGameOverInfo();
+    void initWord();                            //initialize Word
+    void readAGuess();                          //read a input_char
+    void updateGuessedWord();                   //update Guessed Word
+    void updateBadGuess();                      //update Bad Guess Count && list of Bad Guess
+    void gameContinue ();                       //Y or N
+    void clearScreen();                         //cls
+    void renderGame();                          //Game stt after make an input guess
+    bool checkWinYet();                         //Win or not
+    void printGameOverInfo();                   //Print Game Over Info
     
 };
 

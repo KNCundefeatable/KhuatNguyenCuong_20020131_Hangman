@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <thread>
 #include <chrono>
+#include <curses.h>
 
 #include "core.hpp"
 
@@ -160,7 +161,7 @@ void core:: clearScreen()
 
 void core:: renderGame()
 {
-    //clearScreen();
+    clearScreen();
     cout << "Current guess = " << guessedWord << endl;
     cout << "You have made bad " << badGuessCount << " guess(es)"
          << (badGuess.empty() ? "" : ": ") << badGuess << endl
