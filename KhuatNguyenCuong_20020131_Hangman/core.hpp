@@ -16,6 +16,7 @@
 #include <vector>
 #include <algorithm>
 #include <chrono>
+#include <thread>
 
 #include "utility.hpp"
 
@@ -43,7 +44,7 @@ public:
     void updateBadGuess();                      //update Bad Guess Count && list of Bad Guess
     void gameContinue ();                       //Y or N
     void clearScreen();                         //cls
-    void renderGame();                          //Game stt after make an input guess
+    void renderGame();
     bool checkWinYet();                         //Win or not
     void printGameOverInfo();                   //Print Game Over Info
     

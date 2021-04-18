@@ -14,83 +14,85 @@
 #include <thread>
 #include <chrono>
 #include <curses.h>
+#include <unistd.h>
+#include <term.h>
 
 #include "core.hpp"
 
 using namespace std;
 
 string picture[] = {"",
-"   ------------\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |          |\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\\\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\\\n"
-"   |         / \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\\\n"
-"   |         / \\\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-
+    "   ------------\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |          |\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\\\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\\\n"
+    "   |         / \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\\\n"
+    "   |         / \\\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    
 };
 
 
@@ -146,6 +148,8 @@ void core:: gameContinue ()
     {
         //Quit = false;
         Playing = true;
+        badGuessCount = 0;
+        badGuess = "";
     }
 }
 
@@ -164,52 +168,53 @@ void core:: renderGame()
     clearScreen();
     cout << "Current guess = " << guessedWord << endl;
     cout << "You have made bad " << badGuessCount << " guess(es)"
-         << (badGuess.empty() ? "" : ": ") << badGuess << endl
-         << getHangPicture(badGuessCount) << endl;
+    << (badGuess.empty() ? "" : ": ") << badGuess << endl
+    << getHangPicture(badGuessCount) << endl;
 }
 
 const vector<string> HANGED = {
-"   ------------\n"
-"   |         /\n"
-"   |        O\n"
-"   |       /|\\\n"
-"   |       / \\\n"
-"   |         \n"
-"   |         \n"
-"   |         \n"
-"   |         \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\\\n"
-"   |         / \\\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        ",
-"   ------------\n"
-"   |           \\\n"
-"   |            O\n"
-"   |           /|\\\n"
-"   |           / \\\n"
-"   |             \n"
-"   |             \n"
-"   |             \n"
-"   |             \n"
-"-------        ",
-"   ------------\n"
-"   |          |\n"
-"   |          O\n"
-"   |         /|\\\n"
-"   |         / \\\n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"   |           \n"
-"-------        "
+    "   ------------\n"
+    "   |         /\n"
+    "   |        O\n"
+    "   |       /|\\\n"
+    "   |       / \\\n"
+    "   |         \n"
+    "   |         \n"
+    "   |         \n"
+    "   |         \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\\\n"
+    "   |         / \\\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        ",
+    "   ------------\n"
+    "   |           \\\n"
+    "   |            O\n"
+    "   |           /|\\\n"
+    "   |           / \\\n"
+    "   |             \n"
+    "   |             \n"
+    "   |             \n"
+    "   |             \n"
+    "-------        ",
+    "   ------------\n"
+    "   |          |\n"
+    "   |          O\n"
+    "   |         /|\\\n"
+    "   |         / \\\n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "   |           \n"
+    "-------        "
 };
+
 
 bool core:: checkWinYet()
 {
@@ -225,13 +230,13 @@ void core:: printGameOverInfo()
         while (true) {
             clearScreen();
             cout << "Game Over!!! You are hanged" << endl
-                 << "The correct word is " << word << endl;
+            << "The correct word is " << word << endl;
             cout << HANGED[n];
             n = (n+1) % HANGED.size();
             std::this_thread::sleep_for (std::chrono::milliseconds(500));
         }
-
-    } else {
+    }
+    else {
         cout << "Congrats!!! You are free" << endl;
     }
 }

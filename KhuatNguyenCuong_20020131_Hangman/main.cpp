@@ -5,7 +5,6 @@
 //  Created by Khuất Nguyên Cương on 4/12/21.
 //
 
-#include "draw.hpp"
 #include "utility.hpp"
 #include "core.hpp"
 
@@ -24,7 +23,7 @@ int main(int argc, char* argv[])
             hangman->renderGame();
             hangman->readAGuess();
             hangman->updateBadGuess();
-        } while (hangman->checkWinYet());
+        }while (hangman->checkWinYet());
         
         hangman->printGameOverInfo();
         
