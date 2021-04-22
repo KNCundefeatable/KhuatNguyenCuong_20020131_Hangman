@@ -16,8 +16,9 @@ int main(int argc, char* argv[])
     srand(static_cast<unsigned int>(time(nullptr))); //random seeds
     
     core* hangman = new core();
-    
+
     while (hangman->Playing) {
+        hangman ->chooseLevel();
         hangman->initWord();
         do {
             hangman->renderGame();

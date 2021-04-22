@@ -22,7 +22,7 @@ string normalize(const string& s)
     return news;
 }
 
-string chooseWord(const string &fileName)
+string chooseWord(const string &fileName, int level)
 {
     vector<string> vocabulary;
     ifstream file(fileName);
@@ -38,8 +38,30 @@ string chooseWord(const string &fileName)
     srand(static_cast<unsigned int>(time(nullptr))); //random seeds
     unsigned long int n = vocabulary.size();
     cout << "vocabulary size = " << n << endl;
+    
     string word  = vocabulary[rand() % n];
-    cout << word.length() << endl;
+    
+    if(level == 1)
+    {
+        while(word.size()>4)
+        {
+            word  = vocabulary[rand() % n];
+        }
+    }
+    else if(level == 2)
+    {
+        while(word.size()<4 || word.size() >6)
+        {
+            word  = vocabulary[rand() % n];
+        }
+    }
+    else if(level == 3)
+    {
+        while(word.size() <=6)
+        {
+            word  = vocabulary[rand() % n];
+        }
+    }
     return n > 0 ? word : "";
 }
 

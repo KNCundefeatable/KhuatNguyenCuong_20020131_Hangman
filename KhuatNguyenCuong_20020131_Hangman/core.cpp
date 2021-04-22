@@ -102,9 +102,16 @@ core::core()
     badGuessCount = 0;
 }
 
+void core:: chooseLevel()
+{
+    cout << "Please choose the level you want: " << endl;
+    cout << "1. Easy" << endl << "2. Medium" << endl << "3. Hard" << endl << "4. One shot" << endl;
+    cin >> level;
+}
+
 void core:: initWord()
 {
-    word = chooseWord("/Users/knc/Downloads/ogden_picturable_200.txt");
+    word = chooseWord("/Users/knc/Downloads/ogden_picturable_200.txt", level);
     guessedWord = string(word.length(),'-');
 }
 
@@ -166,6 +173,7 @@ void core:: clearScreen()
 void core:: renderGame()
 {
     clearScreen();
+    //cout << "The length of word is: " << word.length() << endl;
     cout << "Current guess = " << guessedWord << endl;
     cout << "You have made bad " << badGuessCount << " guess(es)"
     << (badGuess.empty() ? "" : ": ") << badGuess << endl
@@ -218,6 +226,10 @@ const vector<string> HANGED = {
 
 bool core:: checkWinYet()
 {
+    if(level == 3)
+    {
+        badGuessCount = 6;
+    }
     if(badGuessCount < MAX_BAD_GUESS && guessedWord != word) return true;
     return false;
 }
