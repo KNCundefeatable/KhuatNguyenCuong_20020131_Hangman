@@ -223,12 +223,11 @@ const vector<string> HANGED = {
     "-------        "
 };
 
-
 bool core:: checkWinYet()
 {
-    if(level == 3)
+    if(level == 4)
     {
-        badGuessCount = 6;
+        badGuessCount = 7;
     }
     if(badGuessCount < MAX_BAD_GUESS && guessedWord != word) return true;
     return false;
