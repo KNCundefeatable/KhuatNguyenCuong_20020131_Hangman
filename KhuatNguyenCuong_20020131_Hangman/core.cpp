@@ -231,7 +231,6 @@ bool core:: checkWinorLoseYet()
         badGuessCount = 7;
     }
     if(badGuessCount < MAX_BAD_GUESS && guessedWord != word) return true;
-    else if(badGuessCount == MAX_BAD_GUESS) return true;
     return false;
 }
 
@@ -240,13 +239,16 @@ void core:: printGameOverInfo()
     renderGame();
     if (guessedWord != word) {
         int n = 0;
-        while (true) {
+        int count_to_reset = 0;
+        while (count_to_reset+=10) {
             clearScreen();
             cout << "Game Over!!! You are hanged" << endl
             << "The correct word is " << word << endl;
             cout << HANGED[n];
             n = (n+1) % HANGED.size();
             std::this_thread::sleep_for (std::chrono::milliseconds(500));
+            if(count_to_reset>50)
+                break;
         }
     }
     else {
