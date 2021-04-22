@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
             hangman->renderGame();
             hangman->readAGuess();
             hangman->updateBadGuess();
-        }while (hangman->checkWinYet());
+        }while (hangman->checkWinorLoseYet());
         
         hangman->printGameOverInfo();
         

@@ -104,6 +104,7 @@ core::core()
 
 void core:: chooseLevel()
 {
+    clearScreen();
     cout << "Please choose the level you want: " << endl;
     cout << "1. Easy" << endl << "2. Medium" << endl << "3. Hard" << endl << "4. One shot" << endl;
     cin >> level;
@@ -223,13 +224,14 @@ const vector<string> HANGED = {
     "-------        "
 };
 
-bool core:: checkWinYet()
+bool core:: checkWinorLoseYet()
 {
     if(level == 4)
     {
         badGuessCount = 7;
     }
     if(badGuessCount < MAX_BAD_GUESS && guessedWord != word) return true;
+    else if(badGuessCount == MAX_BAD_GUESS) return true;
     return false;
 }
 

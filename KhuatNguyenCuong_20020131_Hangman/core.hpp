@@ -49,7 +49,7 @@ public:
     void gameContinue ();                       //Y or N
     void clearScreen();                         //cls
     void renderGame();
-    bool checkWinYet();                         //Win or not
+    bool checkWinorLoseYet();                         //Win or not
     void printGameOverInfo();                   //Print Game Over Info
     
 };
