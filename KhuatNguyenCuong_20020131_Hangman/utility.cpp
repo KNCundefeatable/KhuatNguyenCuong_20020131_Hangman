@@ -70,3 +70,34 @@ bool contains(string word, char guess)
     return (word.find(guess) != string::npos);
 }
 
+int getScore(int level, int plusMore)
+{
+    int Score;
+    if(level < 4)
+    {
+        Score = level*100 + 20*(plusMore);
+    }
+    else{
+        Score = 500;
+    }
+    return Score;
+}
+int getMaxScore(std:: string &filename)
+{
+    ifstream file;
+    file.open(filename);
+    if (!file.is_open())
+        return 0;
+    vector<int>ListofScore;
+    while (!file.eof()) {
+        int Score;
+        file >> Score;
+        ListofScore.push_back(Score);
+    }
+    int Max_Score = ListofScore[0];
+    for(unsigned int i=0;i<ListofScore.size()-1;i++)
+    {
+        if(ListofScore[i]>Max_Score) Max_Score = ListofScore[i];
+    }
+    return Max_Score;
+}

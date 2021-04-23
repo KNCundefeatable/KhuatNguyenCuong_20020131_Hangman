@@ -18,6 +18,7 @@
 #include <term.h>
 
 #include "core.hpp"
+#include "utility.hpp"
 
 using namespace std;
 
@@ -272,8 +273,39 @@ void core:: printGameOverInfo()
         }
     }
     else {
+        Score = getScore(level, MAX_BAD_GUESS-badGuessCount);
         cout << "Congrats!!! You are free" << endl;
+        cout << "Your Score is: " << Score << endl;
     }
 }
 
+bool core:: checkHighScore()
+{
+    int MaxScore = getMaxScore("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
+    if(Score > MaxScore) return true;
+    return false;
+}
 
+void core:: SaveHighScore()
+{
+    if(checkHighScore())
+    {
+        ofstream file;
+        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
+        file << Score;
+        file.close();
+    }
+}
+
+void core:: SaveName()
+{
+    if(checkHighScore())
+    {
+        ofstream file;
+        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
+        string Name;
+        getline(cin, Name);
+        file << Name;
+        file.close();
+    }
+}

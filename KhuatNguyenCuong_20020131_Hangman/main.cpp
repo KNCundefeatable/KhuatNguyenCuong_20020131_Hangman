@@ -27,7 +27,8 @@ int main(int argc, char* argv[])
         }while (hangman->checkWinorLoseYet());
         
         hangman->printGameOverInfo();
-        
+        hangman->SaveHighScore();
+        hangman->SaveName();
         hangman->gameContinue();
     }
     

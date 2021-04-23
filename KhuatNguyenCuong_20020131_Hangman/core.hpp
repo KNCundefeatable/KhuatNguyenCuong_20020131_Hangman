@@ -35,6 +35,7 @@ private:
     int badGuessCount;
     const int MAX_BAD_GUESS = 7;
     int level;
+    int Score;
     int callHint = 0;
     string badGuess;
     //bool Quit;
@@ -51,9 +52,11 @@ public:
     void gameContinue ();                       //Y or N
     void clearScreen();                         //cls
     void renderGame();
-    bool checkWinorLoseYet();                         //Win or not
+    bool checkWinorLoseYet();                   //Win or not
     void printGameOverInfo();                   //Print Game Over Info
-    
+    bool checkHighScore();
+    void SaveHighScore();
+    void SaveName();
 };
 
 string getHangPicture(int a);

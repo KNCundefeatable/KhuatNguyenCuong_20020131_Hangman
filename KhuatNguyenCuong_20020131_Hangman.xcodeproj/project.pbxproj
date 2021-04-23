@@ -31,6 +31,7 @@
 		A352623126249C32004B94EE /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 		A352623A2624A847004B94EE /* core.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
 		A352623B2624A847004B94EE /* core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
+		A37E6A5E26325FE400B54E21 /* Score */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Score; sourceTree = "<group>"; };
 		A3FCB627262757FA0092251E /* ogden_picturable_200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ogden_picturable_200.txt; path = ../../../Downloads/ogden_picturable_200.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +68,7 @@
 				A352622826249B98004B94EE /* main.cpp */,
 				A3FCB627262757FA0092251E /* ogden_picturable_200.txt */,
 				A352623026249C32004B94EE /* utility.cpp */,
+				A37E6A5E26325FE400B54E21 /* Score */,
 				A352623126249C32004B94EE /* utility.hpp */,
 				A352623A2624A847004B94EE /* core.cpp */,
 				A352623B2624A847004B94EE /* core.hpp */,
