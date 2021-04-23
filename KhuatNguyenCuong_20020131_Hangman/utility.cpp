@@ -82,16 +82,22 @@ int getScore(int level, int plusMore)
     }
     return Score;
 }
-int getMaxScore(std:: string &filename)
+int getMaxScore(std:: string filename)
 {
     ifstream file;
     file.open(filename);
     if (!file.is_open())
         return 0;
     vector<int>ListofScore;
+    string line;
+    getline(file, line);
     while (!file.eof()) {
         int Score;
         file >> Score;
+        string name;
+        file>> name;
+        string time;
+        file>> time;
         ListofScore.push_back(Score);
     }
     int Max_Score = ListofScore[0];

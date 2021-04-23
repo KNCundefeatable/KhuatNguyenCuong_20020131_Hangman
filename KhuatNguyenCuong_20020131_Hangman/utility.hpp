@@ -15,6 +15,6 @@ std :: string normalize(const std::string &s);
 std :: string chooseWord(const std::string &fileName, int level);
 bool contains(std::string word, char guess);
 int getScore(int level, int plusMore);
-int getMaxScore(std:: string &filename);
+int getMaxScore(std:: string filename);
 void SaveHighScore(int Score);
 #endif /* utility_hpp */
