@@ -92,7 +92,6 @@ string picture[] = {"",
     "   |           \n"
     "   |           \n"
     "-------        ",
-    
 };
 
 
@@ -116,6 +115,26 @@ void core:: initWord()
     guessedWord = string(word.length(),'-');
 }
 
+void core:: HintFunction()
+{
+    int position;
+    if(callHint==0)
+    {
+        cout << "Press 0 if you wanna a hint" << endl << endl;
+    }
+    if(guess == '0')
+    {
+        callHint = 1;
+        clearScreen();
+        cout << "The word is: " << guessedWord << endl;
+        cout << "Please choose the position of the character you want: ";
+        cin >> position;
+        clearScreen();
+        guessedWord[position-1] = word[position-1];
+        updateGuessedWord();
+    }
+}
+
 void core:: readAGuess()
 {
     cout << "Please enter your next guess: ";
@@ -133,7 +152,7 @@ void core:: updateGuessedWord()
 
 void core:: updateBadGuess()
 {
-    if (contains(word, guess)) {
+    if (contains(word, guess) || guess == '0') {
         updateGuessedWord();
     } else {
         badGuessCount++;
@@ -174,6 +193,7 @@ void core:: clearScreen()
 void core:: renderGame()
 {
     clearScreen();
+    HintFunction();
     //cout << "The length of word is: " << word.length() << endl;
     cout << "Current guess = " << guessedWord << endl;
     cout << "You have made bad " << badGuessCount << " guess(es)"

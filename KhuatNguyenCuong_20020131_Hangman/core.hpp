@@ -35,6 +35,7 @@ private:
     int badGuessCount;
     const int MAX_BAD_GUESS = 7;
     int level;
+    int callHint = 0;
     string badGuess;
     //bool Quit;
     
@@ -43,6 +44,7 @@ public:
     core();
     void initWord();                            //initialize Word
     void chooseLevel();                         //choose optional level
+    void HintFunction();                        //Give a hint
     void readAGuess();                          //read a input_char
     void updateGuessedWord();                   //update Guessed Word
     void updateBadGuess();                      //update Bad Guess Count && list of Bad Guess
