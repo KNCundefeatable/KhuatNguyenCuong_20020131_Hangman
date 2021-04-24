@@ -70,7 +70,7 @@ bool contains(string word, char guess)
     return (word.find(guess) != string::npos);
 }
 
-int getScore(int level, int plusMore)
+int getScore(int level, int plusMore, int Hint)
 {
     int Score;
     if(level < 4)
@@ -80,7 +80,8 @@ int getScore(int level, int plusMore)
     else{
         Score = 500;
     }
-    return Score;
+    if(Hint==0) return Score;
+    return Score - 40;
 }
 int getMaxScore(std:: string filename)
 {

@@ -118,14 +118,16 @@ void core:: initWord()
 
 void core:: HintFunction()
 {
+    if(level<4){
     int position;
     if(callHint==0)
     {
         cout << "Press 0 if you wanna a hint" << endl << endl;
     }
-    if(guess == '0')
+    if(guess == '0' && flagHint == 0)
     {
         callHint = 1;
+        flagHint = 1;
         clearScreen();
         cout << "The word is: " << guessedWord << endl;
         cout << "Please choose the position of the character you want: ";
@@ -134,30 +136,47 @@ void core:: HintFunction()
         guessedWord[position-1] = word[position-1];
         updateGuessedWord();
     }
+    }
 }
 
 void core:: readAGuess()
 {
     cout << "Please enter your next guess: ";
-    cin >> guess;
+    if(level<4)
+    {
+        cin >> guess;
+    }
+    else{
+        cin >> guessFullWord;
+    }
 }
-
 void core:: updateGuessedWord()
 {
     unsigned long n = guessedWord.length();
+    if(level < 4){
     for (int i = 0; i < n; i++) {
         if (word[i] == guess)
             guessedWord[i] = guess;
+    }
+    }
+    else{
+        if(word == guessFullWord)
+        {
+            guessedWord = guessFullWord;
+        }
     }
 }
 
 void core:: updateBadGuess()
 {
-    if (contains(word, guess) || guess == '0') {
-        updateGuessedWord();
-    } else {
-        badGuessCount++;
-        badGuess += guess;
+    if(level<4){
+        if (contains(word, guess) || (guess == '0' && flagHint == 0)) {
+            updateGuessedWord();
+        }
+        else {
+            badGuessCount++;
+            badGuess += guess;
+        }
     }
 }
 
@@ -178,6 +197,8 @@ void core:: gameContinue ()
         Playing = true;
         badGuessCount = 0;
         badGuess = "";
+        callHint = 0;
+        flagHint = 0;
     }
 }
 
@@ -273,7 +294,7 @@ void core:: printGameOverInfo()
         }
     }
     else {
-        Score = getScore(level, MAX_BAD_GUESS-badGuessCount);
+        Score = getScore(level, MAX_BAD_GUESS-badGuessCount, callHint);
         cout << "Congrats!!! You are free" << endl;
         cout << "Your Score is: " << Score << endl;
     }
@@ -286,26 +307,26 @@ bool core:: checkHighScore()
     return false;
 }
 
-void core:: SaveHighScore()
-{
-    if(checkHighScore())
-    {
-        ofstream file;
-        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
-        file << Score;
-        file.close();
-    }
-}
+//void core:: SaveHighScore()
+//{
+//    if(checkHighScore())
+//    {
+//        ofstream file;
+//        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
+//        file << Score;
+//        file.close();
+//    }
+//}
 
-void core:: SaveName()
-{
-    if(checkHighScore())
-    {
-        ofstream file;
-        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
-        string Name;
-        getline(cin, Name);
-        file << Name;
-        file.close();
-    }
-}
+//void core:: SaveName()
+//{
+//    if(checkHighScore())
+//    {
+//        ofstream file;
+//        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/New High Score");
+//        string Name;
+//        getline(cin, Name);
+//        file << Name;
+//        file.close();
+//    }
+//}
