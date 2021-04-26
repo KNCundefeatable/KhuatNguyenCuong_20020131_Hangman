@@ -35,6 +35,8 @@ private:
     int badGuessCount;
     const int MAX_BAD_GUESS = 7;
     int level;
+    int category;
+    string categoryName;
     int Score;
     int callHint = 0;
     int flagHint = 0;
@@ -45,6 +47,8 @@ public:
     bool Playing;
     core();
     void initWord();                            //initialize Word
+    void chooseCategory();
+    string initCategory();
     void chooseLevel();                         //choose optional level
     void HintFunction();                        //Give a hint
     void readAGuess();                          //read a input_char

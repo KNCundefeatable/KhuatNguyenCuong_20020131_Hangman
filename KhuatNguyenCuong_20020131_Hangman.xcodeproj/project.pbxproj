@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A352622926249B98004B94EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352622826249B98004B94EE /* main.cpp */; };
-		A352623226249C32004B94EE /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623026249C32004B94EE /* utility.cpp */; };
 		A352623C2624A847004B94EE /* core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623A2624A847004B94EE /* core.cpp */; };
+		A3A4E16426371A9D004FB554 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3A4E16326371A9D004FB554 /* utility.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +27,12 @@
 /* Begin PBXFileReference section */
 		A352622526249B98004B94EE /* KhuatNguyenCuong_20020131_Hangman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KhuatNguyenCuong_20020131_Hangman; sourceTree = BUILT_PRODUCTS_DIR; };
 		A352622826249B98004B94EE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A352623026249C32004B94EE /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		A352623126249C32004B94EE /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 		A352623A2624A847004B94EE /* core.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
 		A352623B2624A847004B94EE /* core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
-		A37E6A5E26325FE400B54E21 /* Score */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Score; sourceTree = "<group>"; };
+		A3A4E16226371920004FB554 /* Vocabulary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vocabulary; sourceTree = "<group>"; };
+		A3A4E16326371A9D004FB554 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
+		A3A4E16726371B0F004FB554 /* Score */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Score; sourceTree = "<group>"; };
 		A3FCB627262757FA0092251E /* ogden_picturable_200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ogden_picturable_200.txt; path = ../../../Downloads/ogden_picturable_200.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,8 +68,9 @@
 			children = (
 				A352622826249B98004B94EE /* main.cpp */,
 				A3FCB627262757FA0092251E /* ogden_picturable_200.txt */,
-				A352623026249C32004B94EE /* utility.cpp */,
-				A37E6A5E26325FE400B54E21 /* Score */,
+				A3A4E16726371B0F004FB554 /* Score */,
+				A3A4E16226371920004FB554 /* Vocabulary */,
+				A3A4E16326371A9D004FB554 /* utility.cpp */,
 				A352623126249C32004B94EE /* utility.hpp */,
 				A352623A2624A847004B94EE /* core.cpp */,
 				A352623B2624A847004B94EE /* core.hpp */,
@@ -132,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A352623226249C32004B94EE /* utility.cpp in Sources */,
+				A3A4E16426371A9D004FB554 /* utility.cpp in Sources */,
 				A352622926249B98004B94EE /* main.cpp in Sources */,
 				A352623C2624A847004B94EE /* core.cpp in Sources */,
 			);

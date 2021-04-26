@@ -18,7 +18,8 @@ int main(int argc, char* argv[])
     core* hangman = new core();
 
     while (hangman->Playing) {
-        hangman ->chooseLevel();
+        hangman->chooseCategory();
+        hangman->chooseLevel();
         hangman->initWord();
         do {
             hangman->renderGame();

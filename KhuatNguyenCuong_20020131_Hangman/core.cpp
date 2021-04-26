@@ -102,6 +102,43 @@ core::core()
     badGuessCount = 0;
 }
 
+void core:: chooseCategory()
+{
+    clearScreen();
+    cout << "Please choose the category of the word: " << endl;
+    cout << "1. Animals" << endl << "2. City" << endl << "3. Clothes" << endl << "4. Environment" << endl << "5. Family" << endl << "6. Fruits" << endl << "7. Jobs" << endl;
+    cin >> category;
+}
+
+string core:: initCategory()
+{
+    switch(category)
+    {
+        case 1:
+            categoryName = "Animals.txt";
+            break;
+        case 2:
+            categoryName = "City.txt";
+            break;
+        case 3:
+            categoryName = "Clothes.txt";
+            break;
+        case 4:
+            categoryName = "Environment.txt";
+            break;
+        case 5:
+            categoryName = "Family.txt";
+            break;
+        case 6:
+            categoryName = "Fruits.txt";
+            break;
+        case 7:
+            categoryName = "Jobs.txt";
+            break;
+    }
+    return categoryName;
+}
+
 void core:: chooseLevel()
 {
     clearScreen();
@@ -112,7 +149,8 @@ void core:: chooseLevel()
 
 void core:: initWord()
 {
-    word = chooseWord("/Users/knc/Downloads/ogden_picturable_200.txt", level);
+    string LinkCategory = initCategory();
+    word = chooseWord("/Users/knc/Downloads/"+LinkCategory, level);
     guessedWord = string(word.length(),'-');
 }
 
