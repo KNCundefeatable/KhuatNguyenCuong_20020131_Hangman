@@ -141,6 +141,7 @@ void core:: HintFunction()
 
 void core:: readAGuess()
 {
+    if(guessedWord != word){
     cout << "Please enter your next guess: ";
     if(level<4)
     {
@@ -148,6 +149,7 @@ void core:: readAGuess()
     }
     else{
         cin >> guessFullWord;
+    }
     }
 }
 void core:: updateGuessedWord()
@@ -170,7 +172,7 @@ void core:: updateGuessedWord()
 void core:: updateBadGuess()
 {
     if(level<4){
-        if (contains(word, guess) || (guess == '0' && flagHint == 0)) {
+        if (contains(word, guess) || (guess == '0' && flagHint == 0) || (guessedWord == word)) {
             updateGuessedWord();
         }
         else {
