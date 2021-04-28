@@ -33,7 +33,6 @@
 		A3A4E16226371920004FB554 /* Vocabulary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vocabulary; sourceTree = "<group>"; };
 		A3A4E16326371A9D004FB554 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		A3A4E16726371B0F004FB554 /* Score */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Score; sourceTree = "<group>"; };
-		A3FCB627262757FA0092251E /* ogden_picturable_200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ogden_picturable_200.txt; path = ../../../Downloads/ogden_picturable_200.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				A352622826249B98004B94EE /* main.cpp */,
-				A3FCB627262757FA0092251E /* ogden_picturable_200.txt */,
 				A3A4E16726371B0F004FB554 /* Score */,
 				A3A4E16226371920004FB554 /* Vocabulary */,
 				A3A4E16326371A9D004FB554 /* utility.cpp */,

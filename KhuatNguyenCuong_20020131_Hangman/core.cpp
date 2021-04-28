@@ -157,50 +157,50 @@ void core:: initWord()
 void core:: HintFunction()
 {
     if(level<4){
-    int position;
-    if(callHint==0)
-    {
-        cout << "Press 0 if you wanna a hint" << endl << endl;
-    }
-    if(guess == '0' && flagHint == 0)
-    {
-        callHint = 1;
-        flagHint = 1;
-        clearScreen();
-        cout << "The word is: " << guessedWord << endl;
-        cout << "Please choose the position of the character you want: ";
-        cin >> position;
-        clearScreen();
-        guessedWord[position-1] = word[position-1];
-        updateGuessedWord();
-    }
+        int position;
+        if(callHint==0)
+        {
+            cout << "Press 0 if you wanna a hint" << endl << endl;
+        }
+        if(guess == '0' && flagHint == 0)
+        {
+            callHint = 1;
+            flagHint = 1;
+            clearScreen();
+            cout << "The word is: " << guessedWord << endl;
+            cout << "Please choose the position of the character you want: ";
+            cin >> position;
+            clearScreen();
+            guessedWord[position-1] = word[position-1];
+            updateGuessedWord();
+        }
     }
 }
 
 void core:: readAGuess()
 {
     if(guessedWord != word){
-    cout << "Please enter your next guess: ";
-    if(level<4)
-    {
-        cin >> guess;
-    }
-    else{
-        cin >> guessFullWord;
-    }
+        cout << "Please enter your next guess: ";
+        if(level<4)
+        {
+            cin >> guess;
+        }
+        else{
+            cin >> guessFullWord;
+        }
     }
 }
 void core:: updateGuessedWord()
 {
     unsigned long n = guessedWord.length();
     if(level < 4){
-    for (int i = 0; i < n; i++) {
-        if (word[i] == guess)
-            guessedWord[i] = guess;
-    }
+        for (int i = 0; i < n; i++) {
+            if (word[i] == guess)
+                guessedWord[i] = guess;
+        }
     }
     else{
-        if(word == guessFullWord)
+        if(guessFullWord == word)
         {
             guessedWord = guessFullWord;
         }
