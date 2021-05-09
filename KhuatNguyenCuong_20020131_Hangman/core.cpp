@@ -373,7 +373,7 @@ void core:: printGameOverInfo()
         cout << "Your Score is: " << Score << endl;
         getTimeFinish();
         TimePlayed = getTimeDone();
-        cout << "Time played: " << TimePlayed << endl;
+        cout << "Time played: " << TimePlayed << " (seconds) " << endl;
     }
 }
 
