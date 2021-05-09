@@ -67,9 +67,6 @@ public:
     void renderGame();
     bool checkWinorLoseYet();                   //Win or not
     void printGameOverInfo();                   //Print Game Over Info
-    bool checkHighScore();
-    void SaveHighScore();
-    void SaveName();
 };
 
 string getHangPicture(int a);

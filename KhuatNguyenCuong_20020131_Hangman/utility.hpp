@@ -16,5 +16,6 @@ std :: string chooseWord(const std::string &fileName, int level);
 bool contains(std::string word, char guess);
 int getScore(int level, int plusMore, int Hint);
 int getMaxScore(std:: string filename);
-void SaveHighScore(int Score);
+bool checkHighScore(int Score);
+void SaveHighScore(std:: string Name, int Score, int TimePlayed);
 #endif /* utility_hpp */

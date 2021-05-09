@@ -13,6 +13,7 @@
 
 #include "utility.hpp"
 
+
 using namespace std;
 
 string normalize(const string& s)
@@ -93,12 +94,13 @@ int getMaxScore(std:: string filename)
     string line;
     getline(file, line);
     while (!file.eof()) {
+        string name;
+        file>> name;
         int Score;
         file >> Score;
-//        string name;
-//        file>> name;
-//        string time;
-//        file>> time;
+        int time;
+        file >> time;
+        getline(file,line);
         ListofScore.push_back(Score);
     }
     int Max_Score = ListofScore[0];
@@ -108,3 +110,21 @@ int getMaxScore(std:: string filename)
     }
     return Max_Score;
 }
+
+bool checkHighScore(int Score)
+{
+    int MaxScore = getMaxScore("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/SaveHighScore.txt");
+    if(Score > MaxScore) return true;
+    return false;
+}
+
+void SaveHighScore(string Name, int Score, int TimePlayed)
+{
+        ofstream file;
+        file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/SaveHighScore.txt",std :: ios :: app);
+        file << Name;
+        file << Score;
+        file << TimePlayed;
+        file.close();
+}
+
