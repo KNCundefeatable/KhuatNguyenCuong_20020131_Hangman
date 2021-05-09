@@ -122,9 +122,9 @@ void SaveHighScore(string Name, int Score, int TimePlayed)
 {
         ofstream file;
         file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/SaveHighScore.txt",std :: ios :: app);
-        file << Name;
-        file << Score;
-        file << TimePlayed;
+        file << setfill(' ') << setw(11) << Name;
+        file << setfill(' ') << setw(11) << Score;
+        file << setfill(' ') << setw(11) << TimePlayed;
         file.close();
 }
 

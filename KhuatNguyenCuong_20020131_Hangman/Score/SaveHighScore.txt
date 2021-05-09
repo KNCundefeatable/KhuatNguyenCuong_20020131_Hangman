@@ -1,4 +1,3 @@
 Player Name     Score     Time Played
           A         0               0
-300Cuong
-Cuonghihi18021
+
