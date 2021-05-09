@@ -27,6 +27,11 @@ class core
 {
 
 private:
+    string TimeStart;
+    time_t startTime;
+    string TimeFinish;
+    time_t finishTime;
+    int TimePlayed;
     string word;
     string YNFullWord;
     string guessFullWord;
@@ -46,6 +51,9 @@ private:
 public:
     bool Playing;
     core();
+    void getTimeStart();
+    void getTimeFinish();
+    int getTimeDone();
     void initWord();                            //initialize Word
     void chooseCategory();
     string initCategory();
@@ -60,8 +68,8 @@ public:
     bool checkWinorLoseYet();                   //Win or not
     void printGameOverInfo();                   //Print Game Over Info
     bool checkHighScore();
-//    void SaveHighScore();
-//    void SaveName();
+    void SaveHighScore();
+    void SaveName();
 };
 
 string getHangPicture(int a);

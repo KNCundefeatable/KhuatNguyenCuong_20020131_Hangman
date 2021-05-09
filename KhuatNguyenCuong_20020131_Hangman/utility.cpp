@@ -95,10 +95,10 @@ int getMaxScore(std:: string filename)
     while (!file.eof()) {
         int Score;
         file >> Score;
-        string name;
-        file>> name;
-        string time;
-        file>> time;
+//        string name;
+//        file>> name;
+//        string time;
+//        file>> time;
         ListofScore.push_back(Score);
     }
     int Max_Score = ListofScore[0];

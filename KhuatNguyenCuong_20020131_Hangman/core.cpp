@@ -105,6 +105,7 @@ core::core()
 void core:: chooseCategory()
 {
     clearScreen();
+    getTimeStart();
     cout << "Please choose the category of the word: " << endl;
     cout << "1. Animals" << endl << "2. City" << endl << "3. Clothes" << endl << "4. Environment" << endl << "5. Family" << endl << "6. Fruits" << endl << "7. Jobs" << endl;
     cin >> category;
@@ -316,6 +317,39 @@ bool core:: checkWinorLoseYet()
     return false;
 }
 
+void core:: getTimeStart() {
+//    time_t     now = time(0);
+//    struct tm  tstruct;
+//    char       buf[80];
+//    tstruct = *localtime(&now);
+//    strftime(buf, sizeof(buf), "%Y-%m-%d || %X", &tstruct);
+//    TimeStart = buf;
+    time_t now = time(0);
+    time(&startTime);
+    TimeStart = ctime(&now);
+    cout << "Time Start: " << TimeStart << endl << endl;
+}
+
+void core:: getTimeFinish() {
+//    time_t     now = time(0);
+//    struct tm  tstruct;
+//    char       buf[80];
+//    tstruct = *localtime(&now);
+//    strftime(buf, sizeof(buf), "%Y-%m-%d || %X", &tstruct);
+//    TimeFinish = buf;
+    time_t now = time(0);
+    TimeFinish = ctime(&now);
+    cout << "Time Finish: " << TimeFinish << endl << endl;
+}
+
+int core:: getTimeDone()
+{
+    time_t now = time(0);
+    time(&now);
+    TimePlayed = difftime(now, startTime);
+    return TimePlayed;
+}
+
 void core:: printGameOverInfo()
 {
     renderGame();
@@ -337,6 +371,9 @@ void core:: printGameOverInfo()
         Score = getScore(level, MAX_BAD_GUESS-badGuessCount, callHint);
         cout << "Congrats!!! You are free" << endl;
         cout << "Your Score is: " << Score << endl;
+        getTimeFinish();
+        TimePlayed = getTimeDone();
+        cout << "Time played: " << TimePlayed << endl;
     }
 }
 
@@ -357,7 +394,7 @@ bool core:: checkHighScore()
 //        file.close();
 //    }
 //}
-
+//
 //void core:: SaveName()
 //{
 //    if(checkHighScore())

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		A352622926249B98004B94EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352622826249B98004B94EE /* main.cpp */; };
 		A352623C2624A847004B94EE /* core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A352623A2624A847004B94EE /* core.cpp */; };
+		A38DCEE92646EB6100C40FB5 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DCEE82646EB6100C40FB5 /* libSDL2-2.0.0.dylib */; };
+		A38DCEEA2646EB6200C40FB5 /* libSDL2-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A38DCEE82646EB6100C40FB5 /* libSDL2-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A38DCEED2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DCEEC2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib */; };
+		A38DCEEE2646EB8600C40FB5 /* libSDL2_image-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A38DCEEC2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A38DCEF02646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DCEEF2646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib */; };
+		A38DCEF12646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A38DCEEF2646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A3A4E16426371A9D004FB554 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3A4E16326371A9D004FB554 /* utility.cpp */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +28,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		A38DCEEB2646EB6200C40FB5 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A38DCEEE2646EB8600C40FB5 /* libSDL2_image-2.0.0.dylib in Embed Libraries */,
+				A38DCEEA2646EB6200C40FB5 /* libSDL2-2.0.0.dylib in Embed Libraries */,
+				A38DCEF12646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +49,9 @@
 		A352623126249C32004B94EE /* utility.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utility.hpp; sourceTree = "<group>"; };
 		A352623A2624A847004B94EE /* core.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
 		A352623B2624A847004B94EE /* core.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = core.hpp; sourceTree = "<group>"; };
+		A38DCEE82646EB6100C40FB5 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2/2.0.14_1/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		A38DCEEC2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
+		A38DCEEF2646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_mixer-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2_mixer/2.0.4_1/lib/libSDL2_mixer-2.0.0.dylib"; sourceTree = "<group>"; };
 		A3A4E16226371920004FB554 /* Vocabulary */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Vocabulary; sourceTree = "<group>"; };
 		A3A4E16326371A9D004FB554 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
 		A3A4E16726371B0F004FB554 /* Score */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Score; sourceTree = "<group>"; };
@@ -40,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38DCEED2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib in Frameworks */,
+				A38DCEE92646EB6100C40FB5 /* libSDL2-2.0.0.dylib in Frameworks */,
+				A38DCEF02646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +76,7 @@
 			children = (
 				A352622726249B98004B94EE /* KhuatNguyenCuong_20020131_Hangman */,
 				A352622626249B98004B94EE /* Products */,
+				A38DCEE72646EB6100C40FB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +102,16 @@
 			path = KhuatNguyenCuong_20020131_Hangman;
 			sourceTree = "<group>";
 		};
+		A38DCEE72646EB6100C40FB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A38DCEEF2646EB9E00C40FB5 /* libSDL2_mixer-2.0.0.dylib */,
+				A38DCEEC2646EB8500C40FB5 /* libSDL2_image-2.0.0.dylib */,
+				A38DCEE82646EB6100C40FB5 /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,6 +122,7 @@
 				A352622126249B98004B94EE /* Sources */,
 				A352622226249B98004B94EE /* Frameworks */,
 				A352622326249B98004B94EE /* CopyFiles */,
+				A38DCEEB2646EB6200C40FB5 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -192,6 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include\n";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -245,6 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include\n";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -256,6 +295,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.14_1/lib,
+					/usr/local/Cellar/sdl2_image/2.0.5/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.4_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -264,6 +309,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.14_1/lib,
+					/usr/local/Cellar/sdl2_image/2.0.5/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.4_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
