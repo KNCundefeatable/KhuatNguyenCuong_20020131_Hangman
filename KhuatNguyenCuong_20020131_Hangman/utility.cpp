@@ -71,7 +71,7 @@ bool contains(string word, char guess)
     return (word.find(guess) != string::npos);
 }
 
-int getScore(int level, int plusMore, int Hint)
+int getScore(int level, int plusMore, int Hint, string word, int TimePlayed)
 {
     int Score;
     if(level < 4)
@@ -81,8 +81,10 @@ int getScore(int level, int plusMore, int Hint)
     else{
         Score = 500;
     }
-    if(Hint==0) return Score;
-    return Score - 40;
+    unsigned long int Time = word.length()*4;
+    double TimeBonus = Time/TimePlayed;
+    if(Hint==0) return Score + 10*pow(TimeBonus,2);
+    return Score - 40 + 10*pow(TimeBonus,2);
 }
 int getMaxScore(std:: string filename)
 {
@@ -90,7 +92,7 @@ int getMaxScore(std:: string filename)
     file.open(filename);
     if (!file.is_open())
         return 0;
-    vector<int>ListofScore(5);
+    vector<int>ListofScore;
     string line;
     getline(file, line);
     while (!file.eof()) {
@@ -110,7 +112,7 @@ int getMaxScore(std:: string filename)
 bool checkHighScore(int Score)
 {
     int MaxScore = getMaxScore("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/SaveHighScore.txt");
-    if(Score > MaxScore) return true;
+    if (Score > MaxScore) return true;
     return false;
 }
 

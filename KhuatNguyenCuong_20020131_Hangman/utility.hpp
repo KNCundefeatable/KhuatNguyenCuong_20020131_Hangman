@@ -27,7 +27,7 @@ struct ScoreSaved{
 std :: string normalize(const std::string &s);
 std :: string chooseWord(const std::string &fileName, int level);
 bool contains(std::string word, char guess);
-int getScore(int level, int plusMore, int Hint);
+int getScore(int level, int plusMore, int Hint, std:: string word, int TimePlayed);
 int getMaxScore(std:: string filename);
 bool checkHighScore(int Score);
 void SaveHighScore(ScoreSaved NewScore);

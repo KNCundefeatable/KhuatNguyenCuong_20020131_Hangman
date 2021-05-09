@@ -1,2 +1,4 @@
 Player Name     Score     Time Played
       Cuong       110              24
+
+    Cuongne       310              10

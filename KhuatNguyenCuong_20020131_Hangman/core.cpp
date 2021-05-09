@@ -173,6 +173,7 @@ void core:: HintFunction()
             cin >> position;
             clearScreen();
             guessedWord[position-1] = word[position-1];
+            cout << "You have to find out the word under " << 4*word.size() << "(seconds)" << endl;
             updateGuessedWord();
         }
     }
@@ -256,6 +257,7 @@ void core:: clearScreen()
 void core:: renderGame()
 {
     clearScreen();
+    cout << "You have to find out the word under " << 4*word.size() << "(seconds)" << endl;
     HintFunction();
     //cout << "The length of word is: " << word.length() << endl;
     cout << "Current guess = " << guessedWord << endl;
@@ -368,11 +370,16 @@ void core:: printGameOverInfo()
         }
     }
     else {
-        Score = getScore(level, MAX_BAD_GUESS-badGuessCount, callHint);
+        TimePlayed = getTimeDone();
+        if(TimePlayed > 4*word.size())
+        {
+            cout << "Sorry! Your playing time (" << TimePlayed << "(seconds)) is longer than request (" << 4*word.size() << "(seconds))!" << endl << "You are lose!!!" << endl;
+        }
+        else{
+        Score = getScore(level, MAX_BAD_GUESS-badGuessCount, callHint, word, TimePlayed);
         cout << "Congrats!!! You are free" << endl;
         cout << "Your Score is: " << Score << endl;
         getTimeFinish();
-        TimePlayed = getTimeDone();
         cout << "Time played: " << TimePlayed << " (seconds) " << endl;
         if(checkHighScore(Score))
         {
@@ -381,6 +388,7 @@ void core:: printGameOverInfo()
             cin >> Name;
             ScoreSaved NewScore = ScoreSaved(Name,Score,TimePlayed);
             SaveHighScore(NewScore);
+        }
         }
     }
 }

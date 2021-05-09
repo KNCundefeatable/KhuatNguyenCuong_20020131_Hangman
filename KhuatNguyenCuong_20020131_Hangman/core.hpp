@@ -53,7 +53,7 @@ public:
     core();
     void getTimeStart();
     void getTimeFinish();
-    int getTimeDone();
+    int getTimeDone();                          //get playing time
     void initWord();                            //initialize Word
     void chooseCategory();
     string initCategory();
