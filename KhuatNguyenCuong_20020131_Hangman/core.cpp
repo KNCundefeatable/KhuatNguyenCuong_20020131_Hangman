@@ -379,7 +379,8 @@ void core:: printGameOverInfo()
             string Name;
             cout << "Please enter your Name: ";
             cin >> Name;
-            SaveHighScore(Name, Score, TimePlayed);
+            ScoreSaved NewScore = ScoreSaved(Name,Score,TimePlayed);
+            SaveHighScore(NewScore);
         }
     }
 }

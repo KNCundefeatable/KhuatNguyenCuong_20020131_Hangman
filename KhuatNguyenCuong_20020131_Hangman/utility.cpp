@@ -90,7 +90,7 @@ int getMaxScore(std:: string filename)
     file.open(filename);
     if (!file.is_open())
         return 0;
-    vector<int>ListofScore;
+    vector<int>ListofScore(5);
     string line;
     getline(file, line);
     while (!file.eof()) {
@@ -102,13 +102,9 @@ int getMaxScore(std:: string filename)
         file >> time;
         getline(file,line);
         ListofScore.push_back(Score);
+        sort(ListofScore.begin(), ListofScore.end());
     }
-    int Max_Score = ListofScore[0];
-    for(unsigned int i=0;i<ListofScore.size()-1;i++)
-    {
-        if(ListofScore[i]>Max_Score) Max_Score = ListofScore[i];
-    }
-    return Max_Score;
+    return ListofScore[ListofScore.size()-1];
 }
 
 bool checkHighScore(int Score)
@@ -118,13 +114,14 @@ bool checkHighScore(int Score)
     return false;
 }
 
-void SaveHighScore(string Name, int Score, int TimePlayed)
+void SaveHighScore(ScoreSaved NewScore)
 {
         ofstream file;
         file.open("/Users/knc/Documents/KhuatNguyenCuong_20020131_Hangman/KhuatNguyenCuong_20020131_Hangman/Score/SaveHighScore.txt",std :: ios :: app);
-        file << setfill(' ') << setw(11) << Name;
-        file << setfill(' ') << setw(11) << Score;
-        file << setfill(' ') << setw(11) << TimePlayed;
+        file << setfill(' ') << setw(11) << NewScore.Name;
+        file << setfill(' ') << setw(10) << NewScore.Score;
+        file << setfill(' ') << setw(16) << NewScore.TimePlayed;
+        file << endl;
         file.close();
 }
 

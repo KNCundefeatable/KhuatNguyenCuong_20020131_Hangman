@@ -1,3 +1,2 @@
 Player Name     Score     Time Played
-          A         0               0
-
+      Cuong       110              24
